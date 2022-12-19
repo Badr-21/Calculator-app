@@ -66,7 +66,7 @@ class Calculator {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
-    //every single time a user on a number to add to the screen
+    //every single time a user click on a number to add to the screen
     appendNumber(number) {
         if(number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand = this.currentOperand.toString() + number.toString()
