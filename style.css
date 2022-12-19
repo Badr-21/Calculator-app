@@ -67,6 +67,7 @@ body {
 .header {
     width: 30%;
     padding: 1.5rem .5rem;
+    color: var(--White);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,7 +75,6 @@ body {
 
 .header h1 {
     font-size: 1.8rem;
-    color: var(--White);
 }
 
 .header .themes {
@@ -88,11 +88,10 @@ body {
     flex-direction: column;
 }
 
-.header .themes .switch .theme {
+.header .themes .switch .theme-num {
     width: 4rem;
     font-size: 0.75rem;
     margin-bottom: .2rem;
-    color: var(--White);
     display: flex;
     justify-content: space-around;
 }
@@ -116,7 +115,6 @@ body {
 .header .themes > p {
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: var(--White);
     margin: 0 1rem .5rem 0;
 }
 
@@ -158,7 +156,8 @@ body {
     align-items: center;
 }
 
-.container .buttons .button.del {
+.container .buttons .button.del,
+.container .buttons .button.reset {
     background-color: var(--Desaturated-dark-blue-1);
     color: var(--White);
     font-size: 1.375rem;
@@ -168,11 +167,6 @@ body {
 
 .container .buttons .button.reset {
     grid-area: 5 / 1 / 6 / span 2;
-    background-color: var(--Desaturated-dark-blue-1);
-    color: var(--White);
-    font-size: 1.375rem;
-    text-transform: uppercase;
-    box-shadow: 0 .2rem .1rem var(--Desaturated-dark-blue-2);
 }
 
 .container .buttons .button.equal {
@@ -181,4 +175,104 @@ body {
     color: var(--White);
     font-size: 1.375rem;
     box-shadow: 0 .2rem .1rem var(--Dark-red);
+}
+
+
+/*theme-two*/
+body.theme-two {
+    background-color: var(--Light-gray);
+}
+
+.header.theme-two {
+    color: var(--Very-dark-grayish-yellow);
+}
+
+.header .themes .switch input.theme-two {
+    background-color: var(--Grayish-red);
+}
+
+.header .themes .switch input.theme-two::-webkit-slider-thumb {
+    background-color: var(--Orange);
+}
+
+.container .result.theme-two .screen {
+    background-color: var(--Very-light-gray);
+}
+
+.container .buttons.theme-two {
+    background-color: var(--Grayish-red);
+}
+
+.container .buttons.theme-two .button.del,
+.container .buttons.theme-two .button.reset {
+    color: var(--White);
+    background-color: var(--Dark-moderate-cyan);
+    box-shadow: 0 .2rem .1rem var(--Very-dark-cyan);
+}
+
+.container .buttons.theme-two .button.equal {
+    color: var(--White);
+    background-color: var(--Orange);
+    box-shadow: var(--Dark-orange);
+}
+
+.container .buttons.theme-two .button {
+    color: var(--Very-dark-grayish-yellow);
+    background-color: var(--Light-grayish-yellow);
+    box-shadow: 0 .2rem .1rem var(--Dark-grayish-orange);
+}
+
+
+/*theme-two*/
+body.theme-three {
+    background-color: var(--Very-dark-violet-1);
+}
+
+.header.theme-three {
+    color: var(--Light-yellow);
+}
+
+.header .themes .switch input.theme-three {
+    background-color: var(--Very-dark-violet-2);
+}
+
+.header .themes .switch input.theme-three::-webkit-slider-thumb {
+    background-color: var(--Pure-cyan);
+}
+
+.container .result.theme-three .screen {
+    background-color: var(--Very-dark-violet-2);
+}
+
+.container .buttons.theme-three {
+    background-color: var(--Very-dark-violet-2);
+}
+
+.container .buttons.theme-three .button {
+    color: var(--Light-yellow);
+    background-color: var(--Very-dark-violet);
+    box-shadow: 0 .2rem .1rem var(--Dark-magenta);
+}
+
+.container .buttons.theme-three .button.del,
+.container .buttons.theme-three .button.reset {
+    color: var(--White);
+    background-color: var(--Dark-violet);
+    box-shadow: 0 .2rem .1rem var(--Vivid-magenta);
+}
+
+.container .buttons.theme-three .button.equal {
+    color: var(--Very-dark-blue);
+    background-color: var(--Pure-cyan);
+    box-shadow: var(--Soft-cyan);
+}
+
+@media(hover: hover) {
+    .container .buttons .button:hover {
+        cursor: pointer;
+    }
+    
+    .header .themes .switch input:hover {
+        cursor: pointer;
+    }
 }
