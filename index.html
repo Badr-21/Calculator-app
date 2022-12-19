@@ -7,49 +7,47 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Calculator app</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | [Challenge Name Here]</title>
 </head>
 <body>
   <header class="header">
-    <h1>calc</h1>
-    <div class="themes">
-      <p>Theme</p>
+    <h1>Our Pricing</h1>
+    <div class="billing">
+      <p>Annually</p>
       <label class="switch">
-        <div class="theme-num">
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-        </div>
-        <input type="range" value="1" max="3" min="1">
+        <input type="checkbox">
+        <span class="slider"></span>
       </label>
+      <p>Monthly</p>
     </div>
   </header>
-<main class="container">
-  <section class="result">
-    <div class="screen"></div>
-  </section>
-  <section class="buttons">
-    <div class="button">7</div>
-    <div class="button">8</div>
-    <div class="button">9</div>
-    <div class="button del">del</div>
-    <div class="button">4</div>
-    <div class="button">5</div>
-    <div class="button">6</div>
-    <div class="button">+</div>
-    <div class="button">1</div>
-    <div class="button">2</div>
-    <div class="button">3</div>
-    <div class="button">-</div>
-    <div class="button">.</div>
-    <div class="button">0</div>
-    <div class="button">/</div>
-    <div class="button">x</div>
-    <div class="button reset">reset</div>
-    <div class="button equal">=</div>
-  </section>
-</main>
-<script src="script.js"></script>
+  <main class="container">
+    <div class="basic">
+      <h2>Basic</h2>  
+        <p class="price"><sup>&dollar;</sup><span>19.99</span></p>
+        <p>500 GB Storage</p>
+        <p>2 Users Allowed</p>
+        <p>Send up to 3 GB</p>
+        <button>Learn More</button>
+    </div>
+    <div class="professional">
+        <h2>Professional</h2>
+        <p class="price"><sup>&dollar;</sup><span>24.99</span></p>
+        <p>1 TB Storage</p>
+        <p>5 Users Allowed</p>
+        <p>Send up to 10 GB</p>
+        <button>Learn More</button>
+    </div>
+    <div class="master">
+        <h2>Master</h2>
+        <p class="price"><sup>&dollar;</sup><span>39.99</span></p>
+        <p>2 TB Storage</p>
+        <p>10 Users Allowed</p>
+        <p>Send up to 20 GB</p>
+        <button>Learn More</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>

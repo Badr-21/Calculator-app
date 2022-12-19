@@ -2,277 +2,308 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /*## Colors*/
-
-    /*### Theme 1
-    #### Backgrounds*/
-    --Very-dark-desaturated-blue-1 /*(main background)*/: hsl(222, 26%, 31%);
-    --Very-dark-desaturated-blue-2 /*(toggle background, keypad background)*/: hsl(223, 31%, 20%);
-    --Very-dark-desaturated-blue-3 /*(screen background)*/: hsl(224, 36%, 15%);
-    /*#### Keys*/
-    --Desaturated-dark-blue-1 /*(key background)*/: hsl(225, 21%, 49%);
-    --Desaturated-dark-blue-2 /*(key shadow)*/: hsl(224, 28%, 35%);
-    --Red /*(key background, toggle)*/: hsl(6, 63%, 50%);
-    --Dark-red /*(key shadow)*/: hsl(6, 70%, 34%);
-    --Light-grayish-orange /*(key background)*/: hsl(30, 25%, 89%);
-    --Grayish-orange /*(key shadow)*/: hsl(28, 16%, 65%);
-    /*#### Text*/
-    --Very-dark-grayish-blue: hsl(221, 14%, 31%);
-    --White: hsl(0, 0%, 100%);
-
-    /*### Theme 2
-    #### Backgrounds*/
-    --Light-gray /*(main background)*/: hsl(0, 0%, 90%);
-    --Grayish-red /*(toggle background, keypad background)*/: hsl(0, 5%, 81%);
-    --Very-light-gray /*(screen background)*/: hsl(0, 0%, 93%);
-    /*#### Keys*/
-    --Dark-moderate-cyan /*(key background)*/: hsl(185, 42%, 37%);
-    --Very-dark-cyan /*(key shadow)*/: hsl(185, 58%, 25%);
-    --Orange /*(key background, toggle)*/: hsl(25, 98%, 40%);
-    --Dark-orange /*(key shadow)*/: hsl(25, 99%, 27%);
-    --Light-grayish-yellow /*(key background)*/: hsl(45, 7%, 89%);
-    --Dark-grayish-orange /*(key shadow)*/: hsl(35, 11%, 61%);
-    /*#### Text*/
-    --Very-dark-grayish-yellow: hsl(60, 10%, 19%);
-    --White /*(text)*/: hsl(0, 0%, 100%);
-
-    /*### Theme 3
-    #### Backgrounds*/
-    --Very-dark-violet-1 /*(main background)*/: hsl(268, 75%, 9%);
-    --Very-dark-violet-2 /*(toggle background, keypad background, screen background)*/: hsl(268, 71%, 12%);
-    /*#### Keys*/
-    --Dark-violet /*(key background)*/: hsl(281, 89%, 26%);
-    --Vivid-magenta /*(key shadow)*/: hsl(285, 91%, 52%);
-    --Pure-cyan /*(key background, toggle)*/: hsl(176, 100%, 44%);
-    --Soft-cyan /*(key shadow)*/: hsl(177, 92%, 70%);
-    --Very-dark-violet /*(key background)*/: hsl(268, 47%, 21%);
-    --Dark-magenta /*(key shadow)*/: hsl(290, 70%, 36%);
-    /*#### Text*/
-    --Light-yellow: hsl(52, 100%, 62%);
-    --Very-dark-blue: hsl(198, 20%, 13%);
-    --White /*(text)*/: hsl(0, 0%, 100%);
+    /*## Colors
+    ### Primary*/
+    --Linear-Gradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+    /*### Neutral*/
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
 }
 
 body {
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 100vw;
     height: 100vh;
-    background-color: var(--Very-dark-desaturated-blue-1);
+    background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+    background-size: 20%, 25%;
+    background-color: var(--Very-Light-Grayish-Blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2.5rem 0;
 }
 
 .header {
-    width: 30%;
-    padding: 1.5rem .5rem;
-    color: var(--White);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 1.5rem 0;
 }
 
 .header h1 {
-    font-size: 1.8rem;
+    color: var(--Dark-Grayish-Blue);
 }
 
-.header .themes {
+.header .billing {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
+    gap: 0 1.5rem;
+    color: var(--Grayish-Blue);
+    font-weight: 700;
 }
 
-.header .themes .switch {
-    display: flex;
-    flex-direction: column;
-}
-
-.header .themes .switch .theme-num {
-    width: 4rem;
-    font-size: 0.75rem;
-    margin-bottom: .2rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-.header .themes .switch input {
-    width: 4rem;
-    appearance: none;
-    background-color: var(--Very-dark-desaturated-blue-2);
+.header .billing .switch {
+    position: relative;
+    width: 3.4rem;
+    height: 2rem;
     border-radius: 1rem;
-    padding: .2rem .2rem;
-}
-
-.header .themes .switch input::-webkit-slider-thumb {
-    appearance: none;
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--Red);
-    border-radius: 50%;
-}
-
-.header .themes > p {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    margin: 0 1rem .5rem 0;
-}
-
-.container {
-    width: 30%;
+    background: linear-gradient(to right, var(--Linear-Gradient));
     display: flex;
-    flex-direction: column;
-    gap: 1rem 0;
-}
-
-.container .result .screen {
-    width: 100%;
-    height: 5rem;
-    background-color: var(--Very-dark-desaturated-blue-3 );
-    border-radius: .5rem;
-}
-
-.container .buttons {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 2rem;
-    text-align: center;
-    background-color: var(--Very-dark-desaturated-blue-2);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, auto);
-    gap: 1rem;
-    border-radius: .5rem;
-}
-
-.container .buttons .button {
-    height: 3rem;
-    background-color: var(--Light-grayish-orange);
-    color: var(--Very-dark-grayish-blue);
-    border-radius: .5rem;
-    box-shadow: 0 .2rem .1rem var(--Grayish-orange);
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.container .buttons .button.del,
-.container .buttons .button.reset {
-    background-color: var(--Desaturated-dark-blue-1);
-    color: var(--White);
-    font-size: 1.375rem;
+.header .billing .switch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.header .billing .switch input:checked + .slider {
+    -webkit-transform: translateX(-1.4rem);
+    transform: translateX(-1.4rem);
+}
+
+.header .billing .switch .slider {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: white;
+    left: 1.6rem;
+    transition: transform ease .5s;
+}
+
+.container {
+    width: 66rem;
+    height: 31rem;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.container > div{
+    width: calc(100% / 3);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .professional {
+    height: 100%;
+    background: linear-gradient(to right, var(--Linear-Gradient));
+    color: white;
+    border-radius: .5rem;
+}
+
+.container .basic {
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.container .master {
+    border-radius: 0 .5rem .5rem 0;
+}
+
+
+.container div:not(.professional) {
+    height: 90%;
+    background-color: white;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.container > div h2 {
+    margin-bottom: .8rem;
+}
+
+
+.container div .price {
+    width: 100%;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    padding-bottom: 1.2rem;
+    border-bottom: .1rem solid var(--Light-Grayish-Blue);
+}
+
+.container div .price span {
+    font-size: 5rem;
+}
+
+.container div p:not(.price) {
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: .1rem solid var(--Light-Grayish-Blue);
+}
+
+.container div button {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: .8rem 0;
+    margin-top: 2rem;
+    border: none;
     text-transform: uppercase;
-    box-shadow: 0 .2rem .1rem var(--Desaturated-dark-blue-2);
+    letter-spacing: .1rem;
+    font-weight: 700;
+    border-radius: .5rem;
 }
 
-.container .buttons .button.reset {
-    grid-area: 5 / 1 / 6 / span 2;
+.container .professional button {
+    background-color: white;
+    color: var(--Dark-Grayish-Blue);
+    border: .1rem solid white;
 }
 
-.container .buttons .button.equal {
-    grid-area: 5 / 3 / 6 / span 2;
-    background-color: var(--Red);
-    color: var(--White);
-    font-size: 1.375rem;
-    box-shadow: 0 .2rem .1rem var(--Dark-red);
-}
-
-
-/*theme-two*/
-body.theme-two {
-    background-color: var(--Light-gray);
-}
-
-.header.theme-two {
-    color: var(--Very-dark-grayish-yellow);
-}
-
-.header .themes .switch input.theme-two {
-    background-color: var(--Grayish-red);
-}
-
-.header .themes .switch input.theme-two::-webkit-slider-thumb {
-    background-color: var(--Orange);
-}
-
-.container .result.theme-two .screen {
-    background-color: var(--Very-light-gray);
-}
-
-.container .buttons.theme-two {
-    background-color: var(--Grayish-red);
-}
-
-.container .buttons.theme-two .button.del,
-.container .buttons.theme-two .button.reset {
-    color: var(--White);
-    background-color: var(--Dark-moderate-cyan);
-    box-shadow: 0 .2rem .1rem var(--Very-dark-cyan);
-}
-
-.container .buttons.theme-two .button.equal {
-    color: var(--White);
-    background-color: var(--Orange);
-    box-shadow: var(--Dark-orange);
-}
-
-.container .buttons.theme-two .button {
-    color: var(--Very-dark-grayish-yellow);
-    background-color: var(--Light-grayish-yellow);
-    box-shadow: 0 .2rem .1rem var(--Dark-grayish-orange);
-}
-
-
-/*theme-two*/
-body.theme-three {
-    background-color: var(--Very-dark-violet-1);
-}
-
-.header.theme-three {
-    color: var(--Light-yellow);
-}
-
-.header .themes .switch input.theme-three {
-    background-color: var(--Very-dark-violet-2);
-}
-
-.header .themes .switch input.theme-three::-webkit-slider-thumb {
-    background-color: var(--Pure-cyan);
-}
-
-.container .result.theme-three .screen {
-    background-color: var(--Very-dark-violet-2);
-}
-
-.container .buttons.theme-three {
-    background-color: var(--Very-dark-violet-2);
-}
-
-.container .buttons.theme-three .button {
-    color: var(--Light-yellow);
-    background-color: var(--Very-dark-violet);
-    box-shadow: 0 .2rem .1rem var(--Dark-magenta);
-}
-
-.container .buttons.theme-three .button.del,
-.container .buttons.theme-three .button.reset {
-    color: var(--White);
-    background-color: var(--Dark-violet);
-    box-shadow: 0 .2rem .1rem var(--Vivid-magenta);
-}
-
-.container .buttons.theme-three .button.equal {
-    color: var(--Very-dark-blue);
-    background-color: var(--Pure-cyan);
-    box-shadow: var(--Soft-cyan);
+.container div:not(.professional) button {
+    background: linear-gradient(to right, var(--Linear-Gradient));
+    color: white;
+    border: .1rem solid var(--Light-Grayish-Blue);
 }
 
 @media(hover: hover) {
-    .container .buttons .button:hover {
+    .header .billing .switch:hover {
         cursor: pointer;
+        opacity: .5;
+    } 
+
+    .container .professional button:hover {
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
     }
-    
-    .header .themes .switch input:hover {
+
+    .container div:not(.professional) button:hover {
         cursor: pointer;
+        background: transparent;
+        color: var(--Dark-Grayish-Blue);
+    }
+}
+
+
+@media(max-width: 1075px) {
+    .container {
+        width: 60rem;
+    }
+
+    .container div .price {
+        font-size: 2.3rem;
+    }
+
+    .container div .price span {
+        font-size: 4rem;
+    }
+}
+
+@media(max-width: 975px) {
+    .container {
+        width: 50rem;
+    }
+
+    .container div .price {
+        font-size: 2rem;
+    }
+
+    .container div .price span {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width: 815px) {
+    .container {
+        width: 40rem;
+    }
+
+    .container div .price {
+        font-size: 1.7rem;
+    }
+
+    .container div .price span {
+        font-size: 2.7rem;
+    }
+}
+
+@media(max-width: 650px) {
+    .container {
+        width: 35rem;
+    }
+
+    .container div .price {
+        font-size: 1.2rem;
+    }
+
+    .container div .price span {
+        font-size: 2.0rem;
+    }
+}
+
+@media(max-width: 575px) {
+    .container {
+        width: 30rem;
+    }
+
+    .container div .price {
+        font-size: 1.2rem;
+    }
+
+    .container div .price span {
+        font-size: 2.0rem;
+    }
+}
+
+@media(max-width: 490px) {
+
+    body {
+        width: 100%;
+        height: auto;
+        padding: 2rem 0;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: right top;
+    }
+    .container {
+        width: 20rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem 0;
+    }
+
+    .container > div{
+        width: 100%;
+    }
+
+    .container .basic {
+        border-radius: .5rem;
+    }
+
+    .container .master {
+        border-radius: .5rem;
+    }
+
+    .container div .price {
+        font-size: 3rem;
+    }
+
+    .container div .price span {
+        font-size: 4.8rem;
+    }
+}
+
+@media(max-width: 375px) {
+    body {
+        padding: 3rem 0;
+        gap: 5rem 0;
+    }
+
+    .header {
+        gap: 2.5rem 0
     }
 }
