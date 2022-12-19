@@ -142,11 +142,21 @@ body.theme-one {
     width: 100%;
     height: 5rem;
     padding: 0 1rem;
-    font-size: 3rem;
+    text-align: right;
     border-radius: .5rem;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.container .result .screen .previous-operand {
+    font-size: 1.5rem;
+    opacity: .5;
+}
+
+.container .result .screen .current-operand {
+    font-size: 3rem;
 }
 
 .container.theme-one .result .screen {
