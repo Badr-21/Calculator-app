@@ -40,21 +40,6 @@ themeChanger.addEventListener("change", (e) => {
 });
 
 
-// const screenResult = document.querySelector(".screen");
-// const buttons = document.querySelectorAll(".buttons .button");
-
-
-
-// Array.from(buttons).forEach(button => {
-//     button.addEventListener("click", (e) => {
-//         if(e.target.innerText === "RESET") {
-//             screenResult.innerText = ""
-//         }else {
-//             screenResult.innerText += e.target.innerText;
-//         }
-//     });
-// });
-
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const deleteButton = document.querySelector('[data-delete]');
